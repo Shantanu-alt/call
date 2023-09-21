@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make a Phone Call</title>
+    <!-- Include the Twilio JavaScript library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twilio/3.71.1/twilio.min.js"></script>
+</head>
+<body>
+    <button id="callButton">Call</button>
+
+    <script>
+        // Replace these with your Twilio credentials
+        const accountSid = 'ACb56ef871f02b0eb77ab981d7b3fa6173';
+        const authToken = 'dbca6bfd2e91f3eeddb8cd296837df48';
+
+        // Initialize Twilio client
+        const twilioClient = new Twilio(accountSid, authToken);
+
+        // Function to make a phone call
+        function makeCall() {
+            // Replace with the recipient's phone number
+            const recipientPhoneNumber = '+91 9322250519';
+
+            // Replace with your Twilio phone number
+            const fromPhoneNumber = '12674158802';+
+
+            // Make the call
+            twilioClient.calls.create({
+                url: 'http://demo.twilio.com/docs/voice.xml', // Replace with a TwiML URL or webhook for call handling
+                to: recipientPhoneNumber,
+                from: fromPhoneNumber
+            }).then(call => {
+                console.log(`Call SID: ${call.sid}`);
+            }).catch(error => {
+                console.error(`Error making call: ${error}`);
+            });
+        }
+
+        // Add click event listener to the button
+        document.getElementById('callButton').addEventListener('click', makeCall);
+    </script>
+</body>
+</html>
