@@ -1,0 +1,21 @@
+/* Style for the button container */
+.call-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style for the button link */
+.call-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0074D9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hover effect for the button */
+.call-button a:hover {
+    background-color: #0056b3;
+}
